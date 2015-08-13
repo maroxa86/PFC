@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Alta Nou Usuari {% endblock %}
+
+{% block javascript %}
+<script src="{{STATIC_URL}}js/altausuari.js" languaje="javascript" type="text/javascript">
+</script>
+
+{% endblock %}
+
+{% block contenido %}
+
+<table cellpadding="0" cellspacing="0" id="index_cnt">
+	<tr><td id="cnt_top"></td></tr>
+	<tr><td id="login_title">Alta Nou Usuari<hr /></td></tr>
+	<tr>
+		<td id="alta_body">
+			<form name='altausuari' method='post' action='/altausu/' onLoad=ocults()>{% csrf_token %}
+				<table align="center">
+					<tr>
+						<td>
+							{{ formulari.usuari.label}}
+						</td>
+						<td>
+							<input type="text" name="usuari" value="{{ usuari }}" onBlur="comp_usuari(altausuari)">
+						</td>
+						<td>
+							<div id="usuari_ok" class="perfil_comp" style="background-image:url({{STATIC_URL}}img/ok.png)">
+							<div id="usuari_error" class="perfil_comp" style="background-image:url({{STATIC_URL}}img/error.png); {% if formulari.usuari.errors %} visibility:visible {% endif %}" onMouseOver="error_usuari_mostrar()" onMouseOut="error_usuari_ocultar()">
+							<div id="missatge_error_usuari" class="missatge_error">Longitud de la usuari incorrecta</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{ formulari.contrasenya.label}}
+						</td>
+						<td>
+							<input type="password" name="contrasenya" onBlur="comp_contra(altausuari)" onKeyDown="comp_contra(altausuari)" onKeyUp="comp_contra(altausuari)">
+						</td>
+						<td>
+							<div id="contrasenya_ok" class="perfil_comp" style="background-image:url({{STATIC_URL}}img/ok.png)">
+							<div id="contrasenya_error" class="perfil_comp" style="background-image:url({{STATIC_URL}}img/error.png); {% if formulari.contrasenya.errors %} visibility:visible {% endif %}" onMouseOver="error_contrasenya_mostrar()" onMouseOut="error_contrasenya_ocultar()">
+							<div id="missatge_error_contrasenya" class="missatge_error">Longitud de la contrasenya incorrecta</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{ formulari.repcontrasenya.label}}
+						</td>
+						<td>
+							<input type="password" name="repcontrasenya" onBlur="comp_repcontra(altausuari)" onKeyDown="comp_repcontra(altausuari)" onKeyUp="comp_repcontra(altausuari)">
+						</td>
+						<td>
+							<div id="repcontrasenya_ok" class="perfil_comp" style="background-image:url({{STATIC_URL}}img/ok.png)">
+							<div id="repcontrasenya_error" class="perfil_comp" style="background-image:url({{STATIC_URL}}img/error.png); {% if formulari.repcontrasenya.errors %} visibility:visible {% endif %}" onMouseOver="error_repcontrasenya_mostrar()" onMouseOut="error_repcontrasenya_ocultar()">
+							<div id="missatge_error_repcontrasenya" class="missatge_error">Les contrasenyes no coincideixen</div>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="submit" name="alta" value="Donar d'Alta"/>
+							<input type='submit' value='Cancel·lar' />
+						</td>
+					</tr>
+				</table>
+				<br />
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td id="login_pretail"></td>
+	</tr>
+</table>
+{% endblock %}

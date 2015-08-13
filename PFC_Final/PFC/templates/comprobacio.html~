@@ -1,0 +1,9 @@
+<html>
+<body>
+usuari = {{ usuari }}
+contrasenya = {{ contrasenya }}
+repcontrasenya = {{ repcontrasenya }}
+email = {{ email }}
+repemail = {{ repemail }}
+</body>
+</html>

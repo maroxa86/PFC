@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Usuari {{ user.username }} {% endblock %}
+
+{% block contenido %}
+	<table cellpadding="0" cellspacing="0" id="index_cnt">
+        <tr><td id="cnt_top"></td></tr>
+        <tr>
+    		<td id="admin_body">
+                <br />
+				<div>
+					<span id="sessio_esq">&nbsp;</span>
+					<span id="sessio_login">
+						<ul>
+							<li>{{ user.username }}</li>
+							<li><a href="/logout/">Tancar Sessi&oacute;</a></li>
+						</ul>   
+					</span>  
+				</div>
+                <table class="tamanyTaules">
+					<tr>
+						<td>
+							<div>
+								<img src="{{ STATIC_URL }}img/solucio.png"><a href="/novacarpeta/{{ id_carpeta }}">Carpeta Nova</a>
+								<img src="{{ STATIC_URL }}img/notebook.png"><a href="/pujararxiu/{{ id_carpeta }}">Pujar Arxiu
+								<img src="{{ STATIC_URL }}img/notebook.png"><a href="/compartir/{{ id_carpeta }}">Compartir</a>
+							</div>
+								
+						</td>
+					</tr>
+                    <tr class="titolTaules">
+                        <td id="espaiTaulesCredit"><strong>Nom Arxiu</strong></td><td id="espaiTaulesExamLink"><strong>Tamany</strong></td><td id="espaiTaulesAutoLink"><strong>Modificat</strong></td>
+                    </tr>
+					<tr>
+						<td>
+							{% if pare != 'usuari'%}
+							<img src="{{ STATIC_URL }}img/arrow_undo.png"><a href="/carpeta/{{ pare.Pare }}">Tornar</a>
+							{% else %}
+							<img src="{{ STATIC_URL }}img/arrow_undo.png"><a href="/usuari/">Tornar</a>
+							{% endif%}
+						</td>
+					</tr>
+					{% for carpeta in carpetes %}
+						<tr>
+							<td>
+								<img src="{{ STATIC_URL }}img/solucio.png"><a href="/carpeta/{{ carpeta.idCarpeta }}/">{{ carpeta.Nom }}</a>
+							</td>
+						</tr>
+					{% endfor %}
+                </table>
+                <br />
+            </td>
+        </tr>
+        <tr><td id="login_pretail"></td></tr>
+    </table>
+{% endblock %}

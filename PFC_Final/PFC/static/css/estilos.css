@@ -1,0 +1,163 @@
+﻿/*globals*/
+
+body {
+    margin:0;
+    padding:0;
+	color:#333;
+	font-family: "Myriad Pro Light", Arial, Helvetica, sans-serif;
+	background-image:url(../img/body.png);
+	background-position:middle;
+	background-repeat:repeat-y;
+	background-color:#8e9cab
+}
+a:link, a:visited, a:hover, a:active {color:#333; text-decoration:none; outline:none}
+/*a:hover {color:#3B3B3B}*/
+img {border:none}
+hr {height:0px; border:0; background-color:#8e9cab}
+li {color:#333; line-height:25px}
+#tree {height:30px; vertical-align:top; background-image:url(../img/trans.png); background-repeat:repeat}
+#tree a{font-weight:800; text-decoration:underline}
+#tree a:hover{color:#0066cc}
+.tamanyTaules{width:700px;background-color:#afc5bc}
+.tamanyTaulesEsborrar{width:700px;background-color:red; color:#f2f2f2}
+.tamanyTaulesPerfil{width:400px;background-color:#afc5bc}
+.tamanyTaulesExamen{width:460px;background-color:#afc5bc}
+.tamanyTaulesExamenAlumne{width:250px;background-color:#afc5bc}
+.tamanyTaulesNotes{background-color:#afc5bc}
+.titolTaules{color:#f2f2f2; background-color:#3b614f}
+.taulesOmbra{color:#333;background-color:#6e8d7f}
+.taulesPreguntes{color:#333; background-color:#beffd8; width:98%; border:1px solid #666; padding:7px 7px 7px 0}
+.taulesOmbraEsborrar{background-color:#990000}
+#espaiTaules{padding:2px 5px}
+#espaiTaulesCredit{width:650px; padding:2px 5px}
+#espaiTaulesExamLink{width:50px; text-align:center; padding:2px 5px}
+#espaiTaulesAutoLink{width:52px; text-align:center; padding:2px 5px}
+#espaiTaulesEsborrar{padding:10px 5px}
+
+
+/*login*/
+
+#login_cnt {
+    margin:auto;
+    width:800px;
+    height:300px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-387px;
+	margin-top:-150px	
+}
+#login_logo{height:82px; background-image:url(../img/logo.png); }
+#login_body{ background-image:url(../img/cnt_mid.png); background-repeat:repeat-y}
+#cnt_top { height:40px;background-image:url(../img/cnt_top.png); background-repeat:no-repeat}
+#login_title {font-size:18px; font-weight:600; padding:10px 35px 5px 35px; background-image:url(../img/cnt_mid.png); background-repeat:repeat-y; text-align:center; text-decoration:underline}
+#login_td {padding-right:10px; height:30px}
+#login_submit {padding-left:10px; height:30px}
+#login_box {color: #444; background-image:url(../img/inputBg.gif); border:1px #666 solid; padding:2px 5px}
+.login_comp_dni {width:33px; height:25px; background-repeat:no-repeat; background-position:center; visibility:hidden}
+.login_comp_pw {width:33px; height:25px; background-repeat:no-repeat; background-position:center; visibility:hidden}
+#login_pretail {height:38px; background-image:url(../img/cnt_botom.png); background-repeat:no-repeat}
+#login_tail {height:30px; text-align:center; background-image:url(../img/credits.png); background-position:center; background-repeat:no-repeat}
+
+/*admin*/
+
+#admin_body{padding:0 35px 0 35px; background-image:url(../img/cnt_mid.png); background-repeat:repeat-y}
+
+/*altes*/
+
+#alta_body{padding:0 10px 0 10px; line-height:25px; background-image:url(../img/cnt_mid.png); background-repeat:repeat-y;}
+#alta_box {color: #444; background-image:url(../img/inputBg.gif); border:1px #666 solid; width:200px; padding:2px 5px}
+#altadia_box {color: #444; background-image:url(../img/inputBg.gif); border:1px #666 solid; padding:2px 5px; width:45}
+#altaany_box {color: #444; background-image:url(../img/inputBg.gif); border:1px #666 solid; padding:2px 5px; width:102px}
+
+/*principal*/
+
+#sessio_fons{
+	color:#f0f0f0;
+	height:40px;
+	width:774px;
+	position:absolute;
+	left:50%;
+	margin-left:-387px;
+	padding-top:5px;
+	background-image:url(../img/barra.png);
+	background-repeat:no-repeat;
+}
+#sessio_login{
+	margin:0; 
+	text-align:center;
+	position: absolute;
+	left: 75%;
+	font-size:75%
+}
+#sessio_login ul, li {list-style-type:none}
+#sessio_login ul {
+	padding:0 5px;
+	margin:0;
+	margin-top:-25px
+}
+#sessio_login li{
+	padding:0 5px;
+	margin-top:-25px;
+	display:inline
+}
+#sessio_login a:hover{color:#f2f2f2}
+#index_cnt {
+    margin:auto;
+    width:800px;
+    height:300px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-387px;
+	margin-top:-150px;
+	background-image:url(../img/trans.png)	
+}
+
+/*editar mail i password*/
+
+#edit_body{padding:0 10px 0 10px; line-height:25px; background-image:url(img/cnt_mid.png); background-repeat:repeat-y; text-align:center}
+#edit_td {padding-left:10px}
+#edit_submit {padding-left:10px; height:30px}
+#edit_box {color: #444; background-image:url(../img/inputBg.gif); border:1px #666 solid; width:200px; padding:2px 5px}
+
+/*preguntes*/
+
+#preg_box {color: #444; background-image:url(../img/inputBg.gif); border:1px #666 solid; width:301px; padding:2px 5px}
+#resp_box {color: #444; background-image:url(../img/inputBg.gif); border:1px #666 solid; width:286px; padding:2px 5px}
+#correct_box {color: #444; background-image:url(../img/inputBg.gif); border:1px #666 solid; width:240px; padding:2px 5px}
+
+/*canviar password*/
+
+.perfil_comp_pwact {width:33px; height:25px; background-repeat:no-repeat; background-position:center; visibility:hidden}
+.perfil_comp_pwnou1 {width:33px; height:25px; background-repeat:no-repeat; background-position:center; visibility:hidden}
+.perfil_comp_pwnou2 {width:33px; height:25px; background-repeat:no-repeat; background-position:center; visibility:hidden}
+
+/*canviar mail*/
+
+.perfil_comp_emnou1 {width:33px; height:25px; background-repeat:no-repeat; background-position:center; visibility:hidden}
+.perfil_comp_emnou2 {width:33px; height:25px; background-repeat:no-repeat; background-position:center; visibility:hidden}
+
+/*validacions*/
+.perfil_comp {width:33px; height:25px; background-repeat:no-repeat; background-position:center; visibility:hidden}
+.preg_comp {width:33px; height:25px; background-repeat:no-repeat; background-position:center; visibility:hidden}
+
+/*notes*/
+#notes a{color:#f2f2f2; font-weight:800; text-decoration:none; outline:none}
+#notes a:hover{color:#333}
+
+.invisible {visibility:hidden}
+
+/*missatges errors*/
+.missatge_error{
+    padding: 5;
+    font-size: 12px;
+    border: black solid 1px;
+    font-family: verdana;
+    position: absolute;
+    background-color: #ffd038;
+    color: 000000;
+	visibility:hidden;
+	
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Projecte Final De Carrera</title>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}estilos.css"/>
+</head>
+<body>
+	<table cellpadding="0" cellspacing="0" id="index_cnt">
+    	<tr><td id="login_logo"></td></tr>
+        <tr><td id="cnt_top"></td></tr>
+        <tr>
+    		<td id="admin_body">
+                <br />
+				<div>
+					<span id="sessio_esq">&nbsp;</span>
+					<span id="sessio_login">
+						<ul>
+							<li>{{ user.username }}</li>
+							<li><a href="/logout/">Tancar Sessi&oacute;</a></li>
+						</ul>   
+					</span>  
+				</div>
+				<form method="post" action="/pujararxiu/{{ carpeta }}/" enctype="multipart/form-data">
+					<table class="tamanyTaules">
+						<tr class="titolTaules">
+							<td id="espaiTaulesCredit"><strong>{{ form.file.label }}</strong></td>
+						</tr>
+						<tr>
+							<td>
+								{{ form.file }}
+								<input type="submit" value="Pujar Arxiu">
+								<a href="/usuari/">Cancel·lar
+								<input type="text" name="pare" value="{{ carpeta }}" class="invisible">
+							</td>
+						</tr>
+						<tr>
+							{{ form.errors}}
+						</tr>
+					</table>
+				</form>
+                <br />
+            </td>
+        </tr>
+        <tr><td id="login_pretail"></td></tr>
+        <tr><td id="login_tail"></td></tr>
+    </table>
+</body>
+</html>

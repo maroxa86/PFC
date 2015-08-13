@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang='ca'>
+	<head>
+		<meta charset='utf8'>
+		<title>Projecte Final de Carrera - {% block titulo %}{% endblock%}</title>
+		<link rel='stylesheet' href='{{STATIC_URL}}css/estilos.css'>
+		<style>
+			{% block style_css %}{% endblock %}
+		</style>
+		{% block javascript %}{% endblock %}
+	</head>
+	<body>
+		{% block contenido%}{% endblock %}
+	</body>
+<html>

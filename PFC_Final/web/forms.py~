@@ -1,0 +1,65 @@
+#encoding: utf-8
+from django.forms import ModelForm
+from django import forms
+from django.contrib.auth.models import User
+
+#Formulari Alta usuari
+class AltaForm(forms.Form):	
+
+	usuari = forms.CharField(widget=forms.TextInput, label='Usuari')
+	contrasenya = forms.CharField(widget=forms.PasswordInput, min_length = 6, max_length = 12, label='Contrasenya')
+	repcontrasenya = forms.CharField(widget=forms.PasswordInput, min_length = 6, max_length = 12, label='Repeteix Contrasenya')
+	email = forms.EmailField(label='Email')
+	repemail = forms.EmailField(label='Repeteix Email')
+
+	def clean_usuari(self):
+		usuari = self.cleaned_data['usuari']
+
+		try:
+			user = User.objects.get(username=usuari)
+		except User.DoesNotExist:
+			return usuari
+		raise forms.ValidationError("L'usuari ja existeix")			
+
+	def clean_contrasenya(self):
+		contrasenya = self.cleaned_data['contrasenya']
+		len_pass = len(contrasenya.split())
+
+		if len_pass >= 6 or len_pass <= 12:
+			return contrasenya
+		raise forms.ValidationError("Longitud de la contrasenya incorrecta")
+
+	def clean_repcontrasenya(self):
+		contrasenya = self.cleaned_data.get('contrasenya'," ")
+		repcontrasenya = self.cleaned_data['repcontrasenya']
+		
+		if contrasenya == repcontrasenya:
+			return repcontrasenya
+		raise forms.ValidationError("Les contrasenyes no coincideixen")
+
+	def clean_email(self):
+		email = self.cleaned_data['email']
+
+		try:
+			user = User.objects.get(email=email)
+		except User.DoesNotExist:
+			return email
+		raise forms.ValidationError("El email ja existeix")
+
+	def clean_repemail(self):
+		email = self.cleaned_data.get('email'," ")
+		repemail = self.cleaned_data['repemail']
+		
+		if email == repemail:
+			return repemail
+		raise forms.ValidationError("Els email no coincideixen")
+
+#Formulari per una nova carpeta
+class NovaCarpeta(forms.Form):
+	nom = forms.CharField(widget=forms.TextInput, label='Nom Carpeta')
+
+class Fitxer(forms.Form):
+	file = forms.FileField(label='Fitxer')
+
+
+
